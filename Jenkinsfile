@@ -2,11 +2,11 @@ pipeline{
     agent any
     stages{
         stage('1-repoClone'){
-            steps(
+            steps{
                 sh 'df -h'
-            )
+            }
         }
-        stage('2-cpuAnalysid'){
+        stage('2-cpuAnalysis'){
             steps{
                 sh 'lscpu'
             }
@@ -16,7 +16,7 @@ pipeline{
                 sh 'free -g'
             }
         } 
-        stage('4 os stats'){
+        stage('4-os-stats'){
             steps{
                 sh 'cat /etc/os-release'
             }
